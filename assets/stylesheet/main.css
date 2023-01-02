@@ -1,0 +1,338 @@
+.page-menu {
+  display: flex;
+  flex-wrap: wrap;
+  color: white;
+  width: 80%;
+  margin: 2em auto;
+  padding: 2em 0 3em 0;
+  border-radius: 1em;
+}
+.page-menu .menu-title {
+  text-align: center;
+  margin: 0 auto;
+  width: 100%;
+}
+.page-menu .menu-buttons {
+  border-radius: 1em;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin: 1em auto;
+  padding: 1em 0;
+  width: 50%;
+}
+.page-menu .content-input,
+.page-menu .title-input,
+.page-menu .end-date-input,
+.page-menu .start-date-input {
+  background-color: #1C1B49;
+  border-radius: 0.5em;
+  margin: 1em auto;
+  color: white;
+  font-family: "Lobster", cursive;
+  width: 75%;
+  padding: 0.5em;
+  border: 2px solid #C0C0C0;
+}
+.page-menu .content-input {
+  height: 5em;
+}
+.page-menu .create-buttons-container {
+  display: flex;
+  margin: 0 auto;
+  gap: 2em;
+}
+.page-menu .create-buttons-container .button {
+  width: 10em;
+}
+.page-menu .create-buttons-container #tsparticles canvas {
+  position: fixed !important;
+  width: 100% !important;
+  height: 100% !important;
+  left: 0 !important;
+  top: 0 !important;
+  pointer-events: none !important;
+}
+.page-menu .main-menu-btn {
+  position: absolute;
+  top: 0;
+  left: 25%;
+  right: 25%;
+}
+.page-menu .search-box {
+  background-color: #1C1B49;
+  font-family: "Lobster", cursive;
+  border-radius: 0.5em;
+  padding: 0.25em;
+  color: white;
+  height: 1.65em;
+  margin: 0.7em auto;
+}
+.page-menu .button {
+  max-width: 8em;
+}
+.page-menu .search-result {
+  display: flex;
+  flex-wrap: wrap;
+}
+.page-menu .search-result div {
+  border: 3px solid white;
+  width: 10em;
+  border-radius: 0.5em;
+  margin: 0.5em auto 0 0;
+  padding: 0.5em;
+}
+.page-menu .search-result div * {
+  font-size: 1rem;
+  margin: 0.5em 0 0 0;
+}
+.page-menu .no-todos-text {
+  font-size: 2rem;
+  text-align: center;
+  width: 100%;
+}
+
+.button {
+  margin: 0.75em auto;
+  width: 80%;
+  height: 2.5em;
+  font-family: "Lobster", cursive;
+  color: white;
+  background-color: #1C1B49;
+  border-radius: 0.5em;
+  cursor: pointer;
+  border: 2px solid #C0C0C0;
+}
+
+button:hover {
+  background-color: #3B3A82;
+}
+
+body, html {
+  margin: 0px;
+  height: 100%;
+  overflow-y: hidden;
+  position: relative;
+  font-family: "Lobster", cursive;
+}
+
+.canvas-background {
+  position: absolute;
+  top: 0;
+  z-index: -10;
+}
+
+.container {
+  position: relative;
+  transition: 0.15s opacity;
+  display: flex;
+  color: white;
+  width: 100%;
+  height: 30em;
+  margin: 5em auto;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+.container .language-flag {
+  width: 5em;
+  height: 3em;
+  position: absolute;
+  left: 2em;
+  top: 2em;
+  cursor: pointer;
+}
+.container .lang-select-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.705);
+  height: 100vh;
+  width: 100%;
+}
+.container .lang-select-flags {
+  display: flex;
+  gap: 2em;
+  margin-top: 3em;
+}
+.container .lang-select-flags .flag-img {
+  width: 7em;
+  height: 5em;
+  cursor: pointer;
+  box-shadow: 0 0 10px black;
+}
+.container .container-background {
+  position: absolute;
+  z-index: -8;
+  width: 200%;
+  height: 100%;
+  opacity: 0.5;
+}
+.container .see-todo-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow-y: scroll;
+}
+.container .see-todo-container::-webkit-scrollbar {
+  display: none;
+}
+.container .see-todo-items {
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid white;
+  border-radius: 4px;
+  flex-direction: column;
+  position: relative;
+  margin-bottom: 1em;
+  padding: 0.2em;
+}
+.container .see-todo-items .delete {
+  position: absolute;
+  font-size: 1rem;
+  right: 0.5em;
+  width: 4em;
+  bottom: -0.25em;
+}
+.container .checkbox {
+  position: absolute;
+  right: 0.5em;
+  top: 0.5em;
+  width: 2em;
+  height: 2em;
+}
+.container .todo-content {
+  max-width: 80%;
+}
+
+body {
+  overflow: hidden;
+}
+
+.rotating-stars {
+  position: absolute;
+  width: 350%;
+  left: -100%;
+  top: 0;
+  opacity: 0.5;
+  z-index: -5;
+  -webkit-animation-name: rotation;
+          animation-name: rotation;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-duration: 150s;
+          animation-duration: 150s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+.confirm-menu {
+  font-size: 1.5rem;
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  z-index: 15;
+  min-width: 7em;
+  background-color: rgba(0, 0, 0, 0.705);
+  width: 100%;
+  height: 100vh;
+}
+.confirm-menu h3:first-child {
+  margin-top: 5em;
+}
+.confirm-menu .buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 75%;
+  max-width: 12em;
+}
+
+@-webkit-keyframes rotation {
+  0% {
+    transform: rotateZ(0);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotateZ(0);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+@media screen and (min-width: 768px) {
+  .container {
+    width: 60%;
+    height: 70vh;
+  }
+  .container .container-background {
+    width: 100%;
+  }
+  .container .see-todo-container {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1em;
+    height: 25em;
+  }
+  .container .see-todo-items {
+    flex: 0 0 30%;
+    height: 10em;
+  }
+  .container .language-flag {
+    width: 7em;
+    height: 5em;
+  }
+  .container .lang-select-container {
+    /* right: 30%;
+    left: 30%; */
+    font-size: 2.5em;
+  }
+  .page-menu {
+    max-width: 1200px;
+    margin: 4em auto;
+  }
+  .page-menu .menu-buttons button {
+    max-width: 7em;
+  }
+  .page-menu .content-input,
+.page-menu .title-input,
+.page-menu .end-date-input,
+.page-menu .start-date-input {
+    width: 50%;
+  }
+  .page-menu .search-box {
+    height: 1.9em;
+  }
+  .page-menu .search-box,
+.page-menu .button {
+    font-size: 1.5rem;
+  }
+  .page-menu .search-result {
+    align-self: stretch;
+    width: 100%;
+    min-height: 80%;
+    justify-content: center;
+  }
+  .page-menu .search-result p {
+    font-size: 1.5rem;
+  }
+  .page-menu .search-result div {
+    margin: 1em;
+  }
+  .page-menu .search-result div * {
+    font-size: 1.5rem;
+    margin: 0.5em 0 0 0;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+}/*# sourceMappingURL=main.css.map */
